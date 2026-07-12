@@ -13,10 +13,10 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T                           
-&kp TAB    &kp A      &kp S      &kp D      &kp F      &kp G                           
-&mt LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                           
-&kp LCTRL  &kp LGUI   &none   &out OUT_TOG  &kp SPACE  &kp BSPC                         
+                &kp ESC &kp Q &kp W &kp E &kp R &kp T   // Строка 0 (6 элементов)
+                &kp TAB &kp A &kp S &kp D &kp F &kp G   // Строка 1 (6 элементов)
+                &mt LSHFT &kp Z &kp X &kp C &kp V &kp B // Строка 2 (6 элементов)
+                &kp LCTRL &kp LGUI &none &out OUT_TOG &kp SPACE &kp BSPC // Строка 3 (6 элементов)                       
             >;
         };
     };
