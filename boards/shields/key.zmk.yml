@@ -4,7 +4,7 @@ name: Key
 type: shield
 url: https://github.com/sasalele-alt/key-shield-module/
 requires:
-  - pro_micro
+  - nice_nano
 features:
   - keys
 siblings:
