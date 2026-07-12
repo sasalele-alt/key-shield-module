@@ -1,0 +1,22 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define BASE 0
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Базовый слой (слой 0)
+        base_layer {
+            display-name = "Base";
+            bindings = <
+&kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T                            &kp Y      &kp U      &kp I      &kp O      &kp P            &none
+&kp TAB    &kp A      &kp S      &kp D      &kp F      &kp G                            &kp H      &kp J      &kp K      &kp L      &kp SEMI         &none
+&mt LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                            &kp N      &kp M      &kp COMMA  &kp DOT    &mt RSHFT FSLH   &none
+&kp LCTRL  &kp LGUI   &none    &lt 2 EQUAL  &kp SPACE  &kp BSPC                         &none      &none      &none      &none      &none            &none
+            >;
+        };
+    };
+};
