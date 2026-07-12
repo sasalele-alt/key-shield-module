@@ -5,7 +5,6 @@
 
 #define BASE 0
 #define LOWER 1
-#define RAISE 2
 
 / {
     keymap {
@@ -14,14 +13,13 @@
         base_layer {
             display-name = "Base";
             bindings = <
-                &kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T   // строка 0 (6 элементов)
-                &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G   // строка 1
-                &mt LSHIFT  &kp Z  &kp X  &kp C  &kp V  &kp B // строка 2
-                &kp LCTRL  &kp LGUI  &none  &out OUT_TOG  &kp SPACE  &kp BSPC // строка 3
+                &kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T
+                &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G
+                &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B
+                &kp LCTRL  &kp LGUI  &none  &out OUT_TOG  &kp SPACE  &kp BSPC
             >;
         };
 
-        // Дополнительные слои (опционально)
         lower_layer {
             display-name = "Lower";
             bindings = <
