@@ -4,7 +4,7 @@ name: My 48-key Split Keyboard
 type: shield
 url: https://github.com/yourusername/zmk-config
 requires:
-  - pro_micro
+  - nice_nano
 exposes:
   - i2c_oled
 features:
