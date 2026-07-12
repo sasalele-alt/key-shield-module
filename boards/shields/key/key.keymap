@@ -4,20 +4,32 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
+#define LOWER 1
+#define RAISE 2
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
-        // Базовый слой (слой 0)
         base_layer {
             display-name = "Base";
             bindings = <
-    &kp ESC   &kp Q &kp W &kp E &kp R &kp T                   &none &none &none &none &none &none
-    &kp TAB   &kp A &kp S &kp D &kp F &kp G                   &none &none &none &none &none &none
-    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                   &none &none &none &none &none &none
-    &kp LCTRL &kp LGUI &none &kp SPACE &kp BSPC               &none &none &none &none &none
->;
+                &kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T   // строка 0 (6 элементов)
+                &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G   // строка 1
+                &mt LSHIFT  &kp Z  &kp X  &kp C  &kp V  &kp B // строка 2
+                &kp LCTRL  &kp LGUI  &none  &out OUT_TOG  &kp SPACE  &kp BSPC // строка 3
+            >;
+        };
+
+        // Дополнительные слои (опционально)
+        lower_layer {
+            display-name = "Lower";
+            bindings = <
+                &kp GRAVE  &kp 1  &kp 2  &kp 3  &kp 4  &kp 5
+                &kp 6  &kp 7  &kp 8  &kp 9  &kp 0  &kp MINUS
+                &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp SEMI  &kp SQT
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
