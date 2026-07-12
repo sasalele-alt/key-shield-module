@@ -1,4 +1,4 @@
-name: zmk-keyboard-<keyboard_name>
+name: zmk-keyboard-key
 build:
   settings:
     board_root: .
