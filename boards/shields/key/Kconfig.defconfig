@@ -1,8 +1,7 @@
 if SHIELD_KEY_LEFT
 
-# Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "Key"
+    default "Key Left"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
