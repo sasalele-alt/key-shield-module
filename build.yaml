@@ -18,7 +18,7 @@
 #     artifact-name: corne_left_with_studio
 #
 include:
-  - board: nice_nano           # Укажите ваш контроллер
+  - board: pro_micro           # Укажите ваш контроллер
     shield: key_left   # Имя левой половины
-  - board: nice_nano
+  - board: pro_micro
     shield: key_right  # Имя правой половины
