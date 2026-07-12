@@ -1,0 +1,12 @@
+file_format: "1"
+id: key
+name: Key
+type: shield
+url: https://github.com/sasalele-alt/key-shield-module/
+requires:
+  - pro_micro
+features:
+  - keys
+siblings:
+  - key_left
+  - key_right
