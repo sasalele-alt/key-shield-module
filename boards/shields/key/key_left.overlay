@@ -12,8 +12,8 @@
 
     row-gpios
         = <&pro_micro 1 GPIO_ACTIVE_HIGH>  // строка 0
-        , <&pro_micro 8 GPIO_ACTIVE_HIGH>  // строка 1
-        , <&pro_micro 4 GPIO_ACTIVE_HIGH>  // строка 2
-        , <&pro_micro 9 GPIO_ACTIVE_HIGH> // строка 3
+        , <&pro_micro 4 GPIO_ACTIVE_HIGH>  // строка 1
+        , <&pro_micro 9 GPIO_ACTIVE_HIGH>  // строка 2
+        , <&pro_micro 8 GPIO_ACTIVE_HIGH> // строка 3
         ;
 };
