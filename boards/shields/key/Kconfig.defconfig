@@ -1,7 +1,7 @@
 if SHIELD_KEY_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Key Left"
+    default "Key"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
