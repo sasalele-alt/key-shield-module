@@ -13,21 +13,23 @@
         base_layer {
             display-name = "Base";
             bindings = <
-                &kp N1  &kp Q  &kp W  &kp E  &kp R  &kp T
-                &kp N2  &kp A  &kp S  &kp D  &kp F  &kp G
-                &kp N3  &kp Z   &kp X  &kp C  &kp V  &kp B
-                &kp LCTRL  &kp LGUI   &none  &kp N4 &kp SPACE  &kp N3
+                // Левая половина (6 столбцов)                // Правая половина (6 столбцов)
+                &kp N1     &kp Q     &kp W    &kp E    &kp R     &kp T      &none &none &none &none &none &none
+                &kp N2     &kp A     &kp S    &kp D    &kp F     &kp G      &none &none &none &none &none &none
+                &kp N3     &kp Z     &kp X    &kp C    &kp V     &kp B      &none &none &none &none &none &none
+                &kp LCTRL  &kp LGUI  &none    &kp N4   &kp SPACE &kp N3     &none &none &none &none &none &none
             >;
         };
 
         lower_layer {
             display-name = "Lower";
             bindings = <
-                &kp GRAVE  &kp 1  &kp 2  &kp 3  &kp 4  &kp 5
-                &kp 6  &kp 7  &kp 8  &kp 9  &kp 0  &kp MINUS
-                &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp SEMI  &kp SQT
-                &trans  &trans  &trans  &trans  &trans  &trans
+                &kp GRAVE  &kp 1     &kp 2     &kp 3     &kp 4     &kp 5      &none &none &none &none &none &none
+                &kp 6      &kp 7     &kp 8     &kp 9     &kp 0     &kp MINUS  &none &none &none &none &none &none
+                &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp SEMI  &kp SQT    &none &none &none &none &none &none
+                &trans     &trans    &trans    &trans    &trans    &trans     &none &none &none &none &none &none
             >;
         };
     };
 };
+
