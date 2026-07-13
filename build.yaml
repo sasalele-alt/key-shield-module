@@ -1,5 +1,5 @@
 include:
-  - board: nice_nano
+  - board: pro_micro
     shield: key_left
-  - board: nice_nano
+  - board: pro_micro
     shield: tester_pro_micro
