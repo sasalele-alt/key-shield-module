@@ -3,13 +3,11 @@ if SHIELD_KEY_LEFT
 config ZMK_KEYBOARD_NAME
     default "Key"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-if SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT
-
+# Принудительно отключаем любые сплит-функции на уровне ядра
 config ZMK_SPLIT
     default n
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
 endif
