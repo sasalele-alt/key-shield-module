@@ -11,6 +11,5 @@ endif
 if SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT
 
 config ZMK_SPLIT
-    default y
-
+    default n
 endif
