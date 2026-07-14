@@ -1,9 +1,8 @@
 if SHIELD_KEY_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Key"
+    default "ZMK Keyboard"
 
-# Принудительно отключаем любые сплит-функции на уровне ядра
 config ZMK_SPLIT
     default n
 
