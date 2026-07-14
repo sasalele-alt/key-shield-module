@@ -14,10 +14,10 @@
             display-name = "Base";
             bindings = <
                 // Левая половина (6 столбцов)                // Правая половина (6 столбцов)
-                &kp N1     &kp Q     &kp W    &kp E    &kp R     &kp T      &none &none &none &none &none &none
-                &kp N2     &kp A     &kp S    &kp D    &kp F     &kp G      &none &none &none &none &none &none
-                &kp N3     &kp Z     &kp X    &kp C    &kp V     &kp B      &none &none &none &none &none &none
-                &kp LCTRL  &kp LGUI  &none    &kp N4   &kp SPACE &kp N3     &none &none &none &none &none &none
+                &kp ESC     &kp Q     &kp W    &kp E    &kp R     &kp T      &none &none &none &none &none &none
+                &kp TAB     &kp A     &kp S    &kp D    &kp F     &kp G      &none &none &none &none &none &none
+                &kp LSHIFT     &kp Z     &kp X    &kp C    &kp V     &kp B      &none &none &none &none &none &none
+                &kp LCTRL  &kp LGUI  &none    &bt BT_CLR   &kp SPACE &kp LALT     &none &none &none &none &none &none
             >;
         };
 
