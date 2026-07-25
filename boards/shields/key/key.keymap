@@ -5,29 +5,64 @@
 
 #define BASE 0
 #define NUMPAD 1
+#define CUSTOM_LAYER 2
 
 / {
+    behaviors {
+        // Настройка умного переключателя слоя через Tap-Dance
+        td_num: tap_dance_numpad {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>; 
+            bindings = <&mo NUMPAD>, <&tog NUMPAD>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
+        // =================================================================================================================
+        // БАЗОВЫЙ СЛОЙ (BASE) — СТАНДАРТНЫЕ БУКВЫ И ОСНОВНЫЕ КЛАВИШИ
+        // =================================================================================================================
         base_layer {
             display-name = "Base";
             bindings = <
-                &kp ESC         &kp Q       &kp W     &kp E     &kp R     &kp T        &none &none &none &none &none &none
-                &kp TAB         &kp A       &kp S     &kp D     &kp F     &kp G        &none &none &none &none &none &none
-                &kp LSHIFT      &kp Z       &kp X     &kp C     &kp V     &kp B        &none &none &none &none &none &none
-                &kp LCTRL       &kp LALT    &none     &mo NUMPAD &kp SPACE &kp ENTER    &none &none &none &none &none &none
+                // ЛЕВАЯ ПОЛОВИНА:      Кл.1       Кл.2      Кл.3      Кл.4             Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:    Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
+                // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                /* Ряд 0 (Верхний) */   &kp ESC    &kp Q     &kp W     &kp E            &kp R     &kp T                             &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
+                /* Ряд 1 (Средний) */   &kp TAB    &kp A     &kp S     &kp D            &kp F     &kp G                             &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+                /* Ряд 2 (Нижний)  */   &kp LSHIFT &kp Z     &kp X     &kp C            &kp V     &kp B                             &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                /* Ряд 3 (Большой) */   &kp LCTRL  &kp LALT  &none     &mo CUSTOM_LAYER &kp SPACE &kp ENTER                         &kp SPACE &td_num   &kp LGUI  &none     &kp RALT  &kp ENTER
             >;
         };
 
+        // =================================================================================================================
+        // ВТОРОЙ СЛОЙ (NUMPAD) — ЦИФРОВОЙ БЛОК НА ЛЕВОЙ РУКЕ, СТРЕЛОЧКИ И СКОБКИ НА ПРАВОЙ
+        // =================================================================================================================
         numpad_layer {
             display-name = "Numpad";
             bindings = <
-                // При зажатом NUMPAD: самая верхняя левая кнопка (бывший ESC) сотрет Bluetooth устройства!
-                &bt BT_CLR      &kp N7      &kp N8    &kp N9    &kp ASTRK &none        &none &none &none &none &none &none
-                &none           &kp N4      &kp N5    &kp N6    &kp PLUS  &none        &none &none &none &none &none &none
-                &none           &kp N1      &kp N2    &kp N3    &kp MINUS &none        &none &none &none &none &none &none
-                &trans          &trans      &none     &trans    &kp N0    &kp DOT      &none &none &none &none &none &none
+                // ЛЕВАЯ ПОЛОВИНА:      Кл.1        Кл.2     Кл.3      Кл.4      Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:    Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
+                // ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                /* Ряд 0 (Верхний) */   &none       &kp N7   &kp N8    &kp N9    &kp ASTRK &kp FSLH                          &kp HOME  &kp UP    &kp END   &kp LBRC  &kp RBRC  &kp DEL
+                /* Ряд 1 (Средний) */   &none       &kp N4   &kp N5    &kp N6    &kp PLUS  &kp EQUAL                         &kp LEFT  &kp DOWN  &kp RIGHT &kp LBKT  &kp RBKT  &none
+                /* Ряд 2 (Нижний)  */   &trans      &kp N1   &kp N2    &kp N3    &kp MINUS &none                             &none     &none     &kp BSLH  &kp GRAVE &kp TILDE &trans
+                /* Ряд 3 (Большой) */   &trans      &trans   &none     &trans    &kp N0    &kp DOT                           &trans    &trans    &trans    &none     &trans    &trans
+            >;
+        };
+
+        // =================================================================================================================
+        // ТРЕТИЙ СЛОЙ (CUSTOM) — ПЕРЕНАЗНАЧЕННЫЕ ЦИФРЫ СЛЕВА И F1-F12 СПРАВА (АКТИВЕН ПРИ УДЕРЖАНИИ)
+        // =================================================================================================================
+        custom_layer {
+            display-name = "Custom";
+            bindings = <
+                // ЛЕВАЯ ПОЛОВИНА:      Кл.1      Кл.2      Кл.3      Кл.4      Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:     Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
+                // ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                /* Ряд 0 (Верхний) */   &kp N1    &kp N2    &kp W     &kp N3    &kp N4    &kp N6                             &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
+                /* Ряд 1 (Средний) */   &trans    &trans    &trans    &trans    &trans    &trans                             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+                /* Ряд 2 (Нижний)  */   &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &bootloader
+                /* Ряд 3 (Большой) */   &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &none     &sys_reset
             >;
         };
     };
