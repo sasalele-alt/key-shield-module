@@ -59,7 +59,7 @@
             bindings = <
                 // ЛЕВАЯ ПОЛОВИНА:      Кл.1      Кл.2      Кл.3      Кл.4      Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:     Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
                 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                /* Ряд 0 (Верхний) */   &kp N1    &kp N2    &kp W     &kp N3    &kp N4    &kp N6                             &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
+                /* Ряд 0 (Верхний) */   &kp N1    &kp N2    &kp W     &kp N3    &kp N4    &kp N5                             &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
                 /* Ряд 1 (Средний) */   &trans    &trans    &trans    &trans    &trans    &trans                             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
                 /* Ряд 2 (Нижний)  */   &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &bootloader
                 /* Ряд 3 (Большой) */   &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &none     &sys_reset
