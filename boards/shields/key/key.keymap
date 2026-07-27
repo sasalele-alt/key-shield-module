@@ -32,7 +32,7 @@
                 /* Ряд 0 (Верхний) */   &kp ESC    &kp Q     &kp W     &kp E            &kp R     &kp T                             &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
                 /* Ряд 1 (Средний) */   &kp TAB    &kp A     &kp S     &kp D            &kp F     &kp G                             &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
                 /* Ряд 2 (Нижний)  */   &kp LSHIFT &kp Z     &kp X     &kp C            &kp V     &kp B                             &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                /* Ряд 3 (Большой) */   &kp LCTRL  &kp LALT  &none     &mo CUSTOM_LAYER &kp SPACE &kp ENTER                         &kp SPACE &td_num   &kp LGUI  &none     &kp RALT  &kp ENTER
+                /* Ряд 3 (Большой) */   &kp LCTRL  &kp LALT  &none     &mo CUSTOM_LAYER &kp SPACE &kp ENTER                         &kp SPACE &kp 1     &kp LGUI  &none     &kp RALT  &kp ENTER
             >;
         };
 
