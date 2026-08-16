@@ -18,49 +18,6 @@
         };
     };
 
-    // =================================================================================================================
-    // НАСТРОЙКА КОМБИНАЦИЙ ИЗ КЛАВИШ (COMBOS)
-    // =================================================================================================================
-    combos {
-        compatible = "zmk,combos";
-        // Увеличили время до 150 мс, чтобы дать пальцам время на одновременный клик
-        timeout-ms = <150>;
-
-        // --- ЛЕВАЯ ПОЛОВИНА ---
-        // Комбо для ввода ЛЕВОЙ половины в режим флешки (Bootloader)
-        // Нажать вместе: ESC (индекс 0) и B (индекс 29)
-        left_bootloader_combo {
-            bindings = <&bootloader>;
-            key-positions = <0 29>;
-            layers = <BASE>;
-        };
-
-        // Комбо для ПЕРЕЗАГРУЗКИ (Reset) ЛЕВОЙ половины
-        // Нажать вместе: TAB (индекс 12) и B (индекс 29)
-        left_reset_combo {
-            bindings = <&sys_reset>;
-            key-positions = <12 29>;
-            layers = <BASE>;
-        };
-
-        // --- ПРАВАЯ ПОЛОВИНА ---
-        // Комбо для ввода ПРАВОЙ половины в режим флешки (Bootloader)
-        // Нажать вместе: BSPC (индекс 11) и N (индекс 30)
-        right_bootloader_combo {
-            bindings = <&bootloader>;
-            key-positions = <11 30>;
-            layers = <BASE>;
-        };
-
-        // Комбо для ПЕРЕЗАГРУЗКИ (Reset) ПРАВОЙ половины
-        // Нажать вместе: SQT (индекс 23) и N (индекс 30)
-        right_reset_combo {
-            bindings = <&sys_reset>;
-            key-positions = <23 30>;
-            layers = <BASE>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -100,12 +57,12 @@
         custom_layer {
             display-name = "Custom";
             bindings = <
-                // ЛЕВАЯ ПОЛОВИНА:      Кл.1      Кл.2      Кл.3      Кл.4      Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:     Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
+                // ЛЕВАЯ ПОЛОВИНА:      Кл.1      Кл.2      Кл.3      Кл.4      Кл.5         Кл.6          ПРАВАЯ ПОЛОВИНА:     Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
                 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                /* Ряд 0 (Верхний) */   &kp N1    &kp N2    &kp W     &kp N3    &kp N4    &kp N5                             &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
-                /* Ряд 1 (Средний) */   &trans    &trans    &trans    &trans    &trans    &trans                             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-                /* Ряд 2 (Нижний)  */   &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &trans    &bootloader
-                /* Ряд 3 (Большой) */   &trans    &trans    &trans    &trans    &trans    &trans                             &trans    &trans    &trans    &trans    &none     &sys_reset
+                /* Ряд 0 (Верхний) */   &kp N1    &kp N2    &kp W     &kp N3    &kp N4       &kp N5                             &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
+                /* Ряд 1 (Средний) */   &trans    &trans    &trans    &trans    &trans       &trans                             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+                /* Ряд 2 (Нижний)  */   &trans    &trans    &trans    &trans    &bootloader  &sys_reset                         &trans    &trans    &trans    &trans    &trans    &bootloader
+                /* Ряд 3 (Большой) */   &trans    &trans    &trans    &trans    &trans       &trans                             &trans    &trans    &trans    &trans    &none     &sys_reset
             >;
         };
     };
