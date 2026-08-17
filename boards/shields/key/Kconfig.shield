@@ -1,12 +1,10 @@
 config SHIELD_KEY_DONGLE
     def_bool $(shields_list_contains,key_dongle)
+    select ZMK_SPLIT_ROLE_CENTRAL
 
 config SHIELD_KEY_LEFT
     def_bool $(shields_list_contains,key_left)
 
 config SHIELD_KEY_RIGHT
     def_bool $(shields_list_contains,key_right)
-
-# Явно регистрируем системную переменную роли для правой половины
-config ZMK_SPLIT_ROLE_PERIPHERAL_RIGHT
-    bool
+    select ZMK_SPLIT_ROLE_PERIPHERAL_RIGHT
