@@ -13,9 +13,3 @@
         events = <>;
     };
 };
-
-// Принудительно удаляем физические свойства матрицы, чтобы они не ломали виртуальный донгл
-&kscan0 {
-    /delete-property/ diode-direction;
-    /delete-property/ wakeup-source;
-};
