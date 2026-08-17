@@ -4,11 +4,12 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
-#define NUMPAD 1
-#define CUSTOM_LAYER 2
+#define CUSTOM_LAYER 1
+#define NUMPAD 2
+#define ESC_HOLD 3   // Добавили новый макро-слой
 
 / {
-    behaviors {
+        behaviors {
         // Настройка умного переключателя слоя через Tap-Dance
         td_num: tap_dance_numpad {
             compatible = "zmk,behavior-tap-dance";
@@ -16,7 +17,26 @@
             tapping-term-ms = <250>; 
             bindings = <&mo NUMPAD>, <&tog NUMPAD>;
         };
+
+        // НАСТРОЙКА ДЛЯ ESC: теперь удержание распознается более четко
+        esc_tilde: esc_tilde_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <350>; // Время зажатия в мс (сделайте больше, если буква Ё вылетает случайно)
+            bindings = <&mo>, <&kp>;
+        };
+
+        // НАСТРОЙКА ДЛЯ СОВМЕЩЕННОЙ КЛАВИШИ Х / Ъ
+        brackets_hold: brackets_tap_dance {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>; // Время зажатия в мс для срабатывания буквы Ъ
+            bindings = <&kp>, <&kp>;
+        };
     };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -27,12 +47,12 @@
         base_layer {
             display-name = "Base";
             bindings = <
-                // ЛЕВАЯ ПОЛОВИНА:      Кл.1       Кл.2      Кл.3      Кл.4             Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:    Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
+                // ЛЕВАЯ ПОЛОВИНА:      Кл.1                Кл.2      Кл.3      Кл.4             Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:    Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
                 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                /* Ряд 0 (Верхний) */   &kp ESC    &kp Q     &kp W     &kp E            &kp R     &kp T                             &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-                /* Ряд 1 (Средний) */   &kp TAB    &kp A     &kp S     &kp D            &kp F     &kp G                             &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-                /* Ряд 2 (Нижний)  */   &kp LSHIFT &kp Z     &kp X     &kp C            &kp V     &kp B                             &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                /* Ряд 3 (Большой) */   &kp LCTRL  &kp LALT  &none     &mo CUSTOM_LAYER &kp SPACE &kp ENTER                         &kp SPACE &kp N1     &kp LGUI  &none     &kp RALT  &kp ENTER
+                /* Ряд 0 (Верхний) */   &lt ESC_HOLD ESC    &kp Q     &kp W     &kp E            &kp R     &kp T                             &kp Y     &kp U     &kp I     &kp O     &kp P     &brackets_hold RBKT LBKT
+                /* Ряд 1 (Средний) */   &kp TAB             &kp A     &kp S     &kp D            &kp F     &kp G                             &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+                /* Ряд 2 (Нижний)  */   &kp LSHIFT          &kp Z     &kp X     &kp C            &kp V     &kp B                             &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                /* Ряд 3 (Большой) */   &kp LCTRL           &kp LALT  &none     &mo CUSTOM_LAYER &kp SPACE &kp ENTER                         &kp BSPC  &td_num   &kp LGUI  &none     &kp RALT  &kp ENTER
             >;
         };
 
@@ -63,6 +83,17 @@
                 /* Ряд 1 (Средний) */   &trans    &trans    &trans    &trans    &trans       &trans                             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
                 /* Ряд 2 (Нижний)  */   &trans    &trans    &trans    &trans    &bootloader  &sys_reset                         &trans    &trans    &trans    &trans    &trans    &bootloader
                 /* Ряд 3 (Большой) */   &trans    &trans    &trans    &trans    &trans       &trans                             &trans    &trans    &trans    &trans    &none     &sys_reset
+            >;
+        };
+
+        esc_hold_layer {
+            display-name = "EscHold";
+            bindings = <
+                // При зажатом ESC: первая кнопка отправляет знак `, а все остальные прозрачны
+                &kp GRAVE       &trans      &trans    &trans    &trans    &trans        &trans               &trans    &trans    &trans    &trans    &trans
+                &trans          &trans      &trans    &trans    &trans    &trans        &trans               &trans    &trans    &trans    &trans    &trans
+                &trans          &trans      &trans    &trans    &trans    &trans        &trans               &trans    &trans    &trans    &trans    &trans
+                &trans          &trans      &trans    &trans    &trans    &trans        &trans               &trans    &trans    &trans    &none     &trans
             >;
         };
     };
