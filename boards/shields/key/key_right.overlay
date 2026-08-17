@@ -4,11 +4,10 @@
     chosen {
         zmk,kscan = &kscan0; // Указываем донглу, что это ВТОРАЯ половина матрицы
     };
-};
 
-&default_transform {
-    col-offset = <6>;   // правая половина начинается с 6-го столбца
-};
+    &default_transform {
+        col-offset = <6>;   // правая половина начинается с 6-го столбца
+    };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
@@ -30,4 +29,5 @@
             , <&pro_micro 16 GPIO_ACTIVE_HIGH>  // строка 2
             , <&pro_micro 10 GPIO_ACTIVE_HIGH> // строка 3
             ;
+    };
 };
