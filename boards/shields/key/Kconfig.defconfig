@@ -13,6 +13,21 @@ if SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
 
+# Отключаем USB-ввод на половинках, так как за HID отвечает донгл
+config ZMK_USB
+    default n
+
+endif
+
+# Указываем ZMK, что щит key_right является именно ПРАВОЙ периферией
+if SHIELD_KEY_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "ZMK Keyboard Right"
+
+config ZMK_SPLIT_ROLE_PERIPHERAL_RIGHT
+    default y
+
 endif
 
 if SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT || SHIELD_KEY_DONGLE
