@@ -1,10 +1,16 @@
 #include "key.dtsi"
 
+/ {
+    chosen {
+        zmk,kscan = &kscan1; // Указываем донглу, что это ВТОРАЯ половина матрицы
+    };
+};
+
 &default_transform {
     col-offset = <6>;   // правая половина начинается с 6-го столбца
 };
 
-&kscan0 {
+&kscan1 {
     col-gpios
         = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 0
         , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 1
