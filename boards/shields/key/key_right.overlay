@@ -15,19 +15,19 @@
         diode-direction = "col2row";
         wakeup-source;
 
-    col-gpios
-        = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 0
-        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 1
-        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 2
-        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 3
-        , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 4
-        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 5
-        ;
-
-    row-gpios
-        = <&pro_micro 1 GPIO_ACTIVE_HIGH>  // строка 0
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // строка 1
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH>  // строка 2
-        , <&pro_micro 10 GPIO_ACTIVE_HIGH> // строка 3
-        ;
+        col-gpios
+            = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 0
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 1
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 2
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 3
+            , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 4
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 5
+            ;
+    
+        row-gpios
+            = <&pro_micro 1 GPIO_ACTIVE_HIGH>  // строка 0
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // строка 1
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH>  // строка 2
+            , <&pro_micro 10 GPIO_ACTIVE_HIGH> // строка 3
+            ;
 };
