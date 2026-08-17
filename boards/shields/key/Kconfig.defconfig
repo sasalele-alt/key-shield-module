@@ -1,7 +1,7 @@
 if SHIELD_KEY_DONGLE || SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "ZMK Keyboard"
+    default "My Keyboard"
 
 config ZMK_SPLIT
     default y
