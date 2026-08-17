@@ -1,17 +1,13 @@
 #include "key.dtsi"
 
 / {
-    chosen {
-        zmk,kscan = &kscan0; // Указываем донглу, что это ВТОРАЯ половина матрицы
-    };
-
     &default_transform {
         col-offset = <6>;   // правая половина начинается с 6-го столбца
     };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
+        diode-direction = "row2col";
         wakeup-source;
 
         col-gpios
