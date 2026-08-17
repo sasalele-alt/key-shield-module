@@ -2,7 +2,7 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan1; // Указываем донглу, что это ВТОРАЯ половина матрицы
+        zmk,kscan = &kscan0; // Указываем донглу, что это ВТОРАЯ половина матрицы
     };
 };
 
@@ -10,10 +10,10 @@
     col-offset = <6>;   // правая половина начинается с 6-го столбца
 };
 
-&kscan1 {
-    compatible = "zmk,kscan-gpio-matrix";
-    diode-direction = "row2col";
-    wakeup-source;
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
 
     col-gpios
         = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 0
