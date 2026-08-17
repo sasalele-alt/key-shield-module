@@ -10,7 +10,7 @@
 
 / {
         behaviors {
-        // Настройка умного переключателя слоя через Tap-Dance
+        // Настройка умного переключателя слоя через Tap-Dance 
         td_num: tap_dance_numpad {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
