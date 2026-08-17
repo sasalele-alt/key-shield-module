@@ -3,6 +3,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
+        zmk,split-peripheral-role = "right";
     };
 
     kscan0: kscan {
