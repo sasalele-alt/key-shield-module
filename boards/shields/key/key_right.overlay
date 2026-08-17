@@ -26,4 +26,9 @@
             , <&pro_micro 10 GPIO_ACTIVE_HIGH>  
             ;
     };
+
+    // Добавьте этот кусочек в самый низ файла key_right.overlay
+    &default_transform {
+        col-offset = <6>;
+    };
 };
