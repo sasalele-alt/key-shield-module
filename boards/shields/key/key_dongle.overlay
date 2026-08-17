@@ -3,6 +3,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,matrix_transform = &default_transform;
     };
 
     mock_kscan: kscan {
@@ -11,4 +12,10 @@
         rows = <0>;
         events = <>;
     };
+};
+
+// Принудительно удаляем физические свойства матрицы, чтобы они не ломали виртуальный донгл
+&kscan0 {
+    /delete-property/ diode-direction;
+    /delete-property/ wakeup-source;
 };
