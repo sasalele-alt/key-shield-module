@@ -1,1 +1,24 @@
+if SHIELD_KEY_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "My Keyboard"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+endif
+
+if SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT || SHIELD_KEY_DONGLE
+
+config ZMK_SPLIT
+    default y
+
+endif
 
