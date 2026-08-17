@@ -10,13 +10,17 @@
         diode-direction = "row2col";
         wakeup-source;
 
+        // КРИТИЧЕСКИ ВАЖНО ДЛЯ ПРАВОЙ СТОРОНЫ ЧЕРЕЗ ДОНГЛ:
+        // Смещаем столбцы правой половины на 6 позиций вправо в общей сетке 12х4
+        col-offset = <6>;
+
         col-gpios
-            = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 0
-            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 1
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 2
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 3
-            , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 4
-            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 5
+            = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // столбец 0 правой платы -> станет 6-м в схеме
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 1 -> станет 7-м
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 2 -> станет 8-м
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 3 -> станет 9-м
+            , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 4 -> станет 10-м
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // столбец 5 -> станет 11-м
             ;
 
         row-gpios
