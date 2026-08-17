@@ -15,12 +15,12 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-# Теперь это сработает идеально, так как тип переменной зарегистрирован выше
 if SHIELD_KEY_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "ZMK Keyboard Right"
 
+# Используем официальный флаг Zephyr для указания правой стороны
 config ZMK_SPLIT_ROLE_PERIPHERAL_RIGHT
     default y
 
