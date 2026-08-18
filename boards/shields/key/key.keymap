@@ -77,12 +77,12 @@
         numpad_layer {
             display-name = "Numpad";
             bindings = <
-                // ЛЕВАЯ ПОЛОВИНА:      Кл.1        Кл.2     Кл.3      Кл.4      Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:    Кл.7      Кл.8      Кл.9      Кл.10     Кл.11     Кл.12
+                // ЛЕВАЯ ПОЛОВИНА:      Кл.1        Кл.2     Кл.3      Кл.4      Кл.5      Кл.6          ПРАВАЯ ПОЛОВИНА:    Кл.7      Кл.8      Кл.9      Кл.10     Кл.11      Кл.12
                 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                /* Ряд 0 (Верхний) */   &none       &kp N7   &kp N8    &kp N9    &kp ASTRK &kp FSLH                          &kp HOME  &kp UP    &kp END   &kp LBRC  &kp RBRC  &kp DEL
-                /* Ряд 1 (Средний) */   &none       &kp N4   &kp N5    &kp N6    &kp PLUS  &kp EQUAL                         &kp LEFT  &kp DOWN  &kp RIGHT &kp LBKT  &kp RBKT  &none
-                /* Ряд 2 (Нижний)  */   &trans      &kp N1   &kp N2    &kp N3    &kp MINUS &none                             &none     &none     &kp BSLH  &kp GRAVE &kp TILDE &trans
-                /* Ряд 3 (Большой) */   &trans      &trans   &none     &trans    &kp N0    &kp DOT                           &trans    &trans    &trans    &none     &trans    &trans
+                /* Ряд 0 (Верхний) */   &none       &kp N7   &kp N8    &kp N9    &kp ASTRK &kp FSLH                          &kp HOME  &kp UP    &kp END   &kp LBRC  &kp RBRC   &kp DEL
+                /* Ряд 1 (Средний) */   &none       &kp N4   &kp N5    &kp N6    &kp PLUS  &kp EQUAL                         &kp LEFT  &kp DOWN  &kp RIGHT &kp LBKT  &kp RBKT   &none
+                /* Ряд 2 (Нижний)  */   &trans      &kp N1   &kp N2    &kp N3    &kp MINUS &none                             &none     &none     &kp BSLH  &kp GRAVE &kp TILDE  &bt BT_SEL 0
+                /* Ряд 3 (Большой) */   &trans      &trans   &none     &trans    &kp N0    &kp DOT                           &trans    &trans    &trans    &none     &bt BT_CLR &bt BT_SEL 1
             >;
         };
 
