@@ -15,13 +15,9 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_KEY_RIGHT
+if SHIELD_KEY_LEFT || SHIELD_KEY_RIGHT || SHIELD_KEY_DONGLE
 
-config ZMK_KEYBOARD_NAME
-    default "ZMK Keyboard"
-
-# Системное переключение правой половины на уровне ядра
-config ZMK_SPLIT_ROLE_PERIPHERAL_RIGHT
+config ZMK_SPLIT
     default y
 
 endif
